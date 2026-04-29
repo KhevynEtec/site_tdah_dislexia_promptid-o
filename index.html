@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apoio Dislexia & TDAH — Aprender com Acolhimento</title>
+<meta name="description" content="Página acolhedora de apoio a alunos com Dislexia e TDAH do ensino fundamental. Dicas, sinais, recursos e chatbot de estudo." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/open-dyslexic@1.0.3/open-dyslexic-regular.css" />
+
+<!-- CSS externo -->
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a href="#conteudo" class="skip" data-i18n="skip">Pular para o conteúdo</a>
+
+<header class="site" role="banner">
+  <div class="nav">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">📚</div>
+      <span data-i18n="brand">Aprender com Acolhimento</span>
+    </div>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#inicio" class="tab" data-view="inicio" data-i18n="nav_home">Início</a></li>
+        <li><a href="#sobre" class="tab" data-view="inicio" data-i18n="nav_about">Sobre</a></li>
+        <li><a href="#dicas" class="tab" data-view="inicio" data-i18n="nav_tips">Dicas</a></li>
+        <li><a href="#recursos" class="tab" data-view="inicio" data-i18n="nav_resources">Recursos</a></li>
+        <li><a href="#chatbot" class="tab" data-view="chatbot" data-i18n="nav_chat">Chatbot</a></li>
+      </ul>
+    </nav>
+    <div class="tools" role="group" aria-label="Ferramentas de acessibilidade">
+      <button class="btn" id="langBtn" aria-label="Mudar idioma" title="PT / EN">🌐 <span id="langLabel">EN</span></button>
+      <button class="btn" id="contrastBtn" aria-label="Ativar alto contraste" title="Alto contraste">🌓 <span data-i18n="contrast">Contraste</span></button>
+      <button class="btn" id="darkBtn" aria-label="Alternar modo escuro" title="Modo escuro">🌙</button>
+      <button class="btn" id="dysBtn" aria-label="Fonte para dislexia" title="Fonte OpenDyslexic">Aa</button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- VIEW INICIO -->
+<div class="view" id="view-inicio">
+
+  <section class="hero" id="inicio">
+    <div>
+      <span class="cta-tag">✨ <span data-i18n="hero_tag">Apoio para Dislexia e TDAH no Ensino Fundamental</span></span>
+      <h1>
+        <span data-i18n="hero_title_1">Aprender pode ser</span>
+        <span class="grad" data-i18n="hero_title_2">leve, divertido e possível</span>.
+      </h1>
+      <p class="sub" data-i18n="hero_sub">Um espaço acolhedor para alunos, pais e professores. Entenda a Dislexia e o TDAH com linguagem simples, dicas práticas e um chatbot que ajuda nos estudos.</p>
+      <div class="cta-row">
+        <a href="#sobre" class="btn primary" data-i18n="cta_explore">🚀 Começar a explorar</a>
+        <button class="btn accent" id="ctaChat" data-i18n="cta_chat">💬 Converse com o ajudante de estudos!</button>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80" alt="" />
+    </div>
+  </section>
+
+  <section id="sobre">
+    <span class="pill" data-i18n="pill_about">Entenda</span>
+    <h2 data-i18n="about_title">O que é Dislexia e TDAH?</h2>
+    <p class="lead" data-i18n="about_lead">Explicações simples e acolhedoras para crianças e responsáveis.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="ico" aria-hidden="true">🔤</div>
+        <h3 data-i18n="dys_title">Dislexia</h3>
+        <p data-i18n="dys_desc">É uma forma diferente do cérebro processar a leitura e a escrita. Não tem a ver com inteligência — crianças com dislexia são muito capazes, só precisam aprender de um jeito que funcione melhor para elas.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">⚡</div>
+        <h3 data-i18n="tdah_title">TDAH</h3>
+        <p data-i18n="tdah_desc">Significa Transtorno do Déficit de Atenção e Hiperatividade. A criança pode ter dificuldade em manter o foco, ficar parada por muito tempo ou esperar a vez. Com apoio, ela aprende muito bem!</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">💛</div>
+        <h3 data-i18n="ok_title">Está tudo bem ser diferente</h3>
+        <p data-i18n="ok_desc">Cada cérebro aprende de um jeito. O importante é encontrar caminhos que respeitem o ritmo e os talentos de cada um.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="sinais">
+    <span class="pill" data-i18n="pill_signs">Observar</span>
+    <h2 data-i18n="signs_title">Sinais e sintomas comuns</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="ico" aria-hidden="true">📖</div>
+        <h3 data-i18n="signs_dys">Sinais de Dislexia</h3>
+        <ul class="checks">
+          <li data-i18n="dys_s1">Dificuldade para ler em voz alta</li>
+          <li data-i18n="dys_s2">Troca, inversão ou omissão de letras</li>
+          <li data-i18n="dys_s3">Cansaço rápido ao ler</li>
+          <li data-i18n="dys_s4">Dificuldade em soletrar e copiar do quadro</li>
+        </ul>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">🧩</div>
+        <h3 data-i18n="signs_tdah">Sinais de TDAH</h3>
+        <ul class="checks">
+          <li data-i18n="tdah_s1">Distrai-se com facilidade</li>
+          <li data-i18n="tdah_s2">Dificuldade em terminar tarefas</li>
+          <li data-i18n="tdah_s3">Inquietação, mexer-se muito</li>
+          <li data-i18n="tdah_s4">Esquecimentos frequentes</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="dicas">
+    <span class="pill" data-i18n="pill_tips">Praticar</span>
+    <h2 data-i18n="tips_title">Dicas de estudo e organização</h2>
+    <p class="lead" data-i18n="tips_lead">Deslize o carrossel para ver dicas práticas.</p>
+
+    <div class="carousel" aria-roledescription="carrossel">
+      <div class="track" id="track">
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80" alt="" />
+          <div>
+            <h3 data-i18n="tip1_t">📅 Rotina visual</h3>
+            <p data-i18n="tip1_d">Use um quadro com horários ilustrados. Ver a rotina ajuda muito alunos com TDAH e dislexia.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80" alt="" />
+          <div>
+            <h3 data-i18n="tip2_t">⏱️ Estude em blocos curtos</h3>
+            <p data-i18n="tip2_d">15 a 20 minutos focados, depois uma pausa de 5 minutos. Isso respeita o ritmo do cérebro.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80" alt="" />
+          <div>
+            <h3 data-i18n="tip3_t">🎧 Leitura com áudio</h3>
+            <p data-i18n="tip3_d">Audiolivros e leitores de tela ajudam quem tem dislexia a entender melhor o conteúdo.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="" />
+          <div>
+            <h3 data-i18n="tip4_t">🧠 Mapas mentais</h3>
+            <p data-i18n="tip4_d">Resumir com cores, ícones e desenhos torna o estudo mais visual e divertido.</p>
+          </div>
+        </div>
+      </div>
+      <div class="car-btns">
+        <button id="prev" aria-label="Slide anterior">‹</button>
+        <button id="next" aria-label="Próximo slide">›</button>
+      </div>
+      <div class="dots" id="dots" role="tablist"></div>
+    </div>
+  </section>
+
+  <section id="ajudar">
+    <span class="pill" data-i18n="pill_help">Apoiar</span>
+    <h2 data-i18n="help_title">Como pais e professores podem ajudar</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="ico" aria-hidden="true">🤝</div>
+        <h3 data-i18n="help1_t">Acolher antes de corrigir</h3>
+        <p data-i18n="help1_d">Elogie o esforço, não só o resultado. Crie um ambiente seguro para errar e tentar de novo.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">🪜</div>
+        <h3 data-i18n="help2_t">Dividir tarefas em passos</h3>
+        <p data-i18n="help2_d">Instruções curtas e visuais ajudam o aluno a saber por onde começar e o que vem depois.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">🎨</div>
+        <h3 data-i18n="help3_t">Usar múltiplos sentidos</h3>
+        <p data-i18n="help3_d">Ouvir, ver, tocar e movimentar — quanto mais sentidos envolvidos, melhor a aprendizagem.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="recursos">
+    <span class="pill" data-i18n="pill_res">Explorar</span>
+    <h2 data-i18n="res_title">Recursos e atividades recomendadas</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="ico" aria-hidden="true">🎮</div>
+        <h3 data-i18n="res1_t">Jogos de leitura</h3>
+        <p data-i18n="res1_d">Aplicativos com sílabas, rimas e histórias interativas tornam a leitura prazerosa.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">📓</div>
+        <h3 data-i18n="res2_t">Caderno colorido</h3>
+        <p data-i18n="res2_d">Use cores diferentes por matéria. Ajuda na organização visual e na memória.</p>
+      </article>
+      <article class="card">
+        <div class="ico" aria-hidden="true">🧘</div>
+        <h3 data-i18n="res3_t">Pausas ativas</h3>
+        <p data-i18n="res3_d">Alongamentos, respiração e pequenas brincadeiras renovam o foco entre as tarefas.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="apoio">
+    <span class="pill" data-i18n="pill_support">Onde buscar apoio</span>
+    <h2 data-i18n="support_title">Você não está sozinho 💙</h2>
+    <div class="grid">
+      <article class="card">
+        <h3 data-i18n="sup1_t">Escola</h3>
+        <p data-i18n="sup1_d">Converse com a coordenação pedagógica. A escola pode oferecer adaptações e acompanhamento.</p>
+      </article>
+      <article class="card">
+        <h3 data-i18n="sup2_t">Profissionais</h3>
+        <p data-i18n="sup2_d">Psicopedagogos, fonoaudiólogos, neuropediatras e psicólogos ajudam no diagnóstico e no plano de apoio.</p>
+      </article>
+      <article class="card">
+        <h3 data-i18n="sup3_t">Associações</h3>
+        <p>
+          <a href="https://www.dislexia.org.br/" target="_blank" rel="noopener">ABD — Associação Brasileira de Dislexia</a><br/>
+          <a href="https://tdah.org.br/" target="_blank" rel="noopener">ABDA — Associação Brasileira do Déficit de Atenção</a>
+        </p>
+      </article>
+    </div>
+  </section>
+</div>
+
+<!-- VIEW CHATBOT -->
+<div class="view hidden" id="view-chatbot">
+  <section id="chatbot" class="active" aria-labelledby="chatTitle">
+    <span class="pill">💬 Chatbot</span>
+    <h2 id="chatTitle" data-i18n="chat_title">Ajudante de Estudos</h2>
+    <p class="lead" data-i18n="chat_lead">Tire dúvidas, peça explicações em palavras simples ou peça dicas para estudar melhor.</p>
+
+    <div class="chat-wrap">
+      <div class="chat-head">
+        <div class="avatar" aria-hidden="true">🤖</div>
+        <div>
+          <strong data-i18n="chat_bot_name">Amiguinho dos Estudos</strong><br/>
+          <small style="color:var(--muted)" data-i18n="chat_bot_sub">Pronto para ajudar com paciência e carinho.</small>
+        </div>
+      </div>
+      <div id="chat" role="log" aria-live="polite" aria-label="Conversa com o chatbot"></div>
+      <div class="chat-input">
+        <label for="msg" class="skip">Mensagem</label>
+        <input id="msg" type="text" placeholder="Escreva sua dúvida..." autocomplete="off" />
+        <button class="btn primary" onclick="enviar()" data-i18n="chat_send">Enviar</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <p>💙 <span data-i18n="footer">Feito com carinho para apoiar a aprendizagem de todas as crianças.</span></p>
+</footer>
+
+<!-- JS externo -->
+<script src="js/script.js"></script>
+</body>
+</html>
