@@ -171,54 +171,112 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
 });
 applyLang();
 
-/* ====== Chatbot conectado ao n8n ====== */
-const N8N_WEBHOOK = "https://dariik.app.n8n.cloud/webhook/a79da60c-de8d-45de-bfe5-86a2d21e072b";
+// ====== Chatbot conectado ao n8n COM MEMÓRIA ======
 
+// URL do seu webhook do n8n
+const N8N_WEBHOOK = "DIGITE-SUA-CHAVE-WEBHOOK";
+
+// ====== MEMÓRIA TEMPORÁRIA ======
+// Array que guarda toda a conversa (enquanto a aba estiver aberta)
+let historico = [];
+
+// Função para adicionar mensagem na tela
 function adicionarMensagem(texto, tipo, id = null) {
   const chat = document.getElementById("chat");
   const div = document.createElement("div");
-  div.classList.add("msg", tipo);
+
+  div.classList.add("msg", tipo); // tipo = user ou bot
   if (id) div.id = id;
+
   div.innerText = texto;
+
   chat.appendChild(div);
-  chat.scrollTop = chat.scrollHeight;
+  chat.scrollTop = chat.scrollHeight; // rola automaticamente
 }
 
+// Função principal de envio
 async function enviar() {
   const input = document.getElementById("msg");
   const mensagem = input.value.trim();
+
   if (!mensagem) return;
+
+  // Mostra mensagem do usuário
   adicionarMensagem(mensagem, "user");
+
+  // SALVA no histórico (IMPORTANTE)
+  historico.push({
+    role: "user",
+    content: mensagem
+  });
+
   input.value = "";
+
+  // Mostra "digitando..."
   adicionarMensagem(i18n[lang].chat_typing, "bot", "typing");
+
   try {
+    // ENVIA HISTÓRICO COMPLETO (não só a última mensagem)
     const resposta = await fetch(N8N_WEBHOOK, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: mensagem })
+      body: JSON.stringify({
+        messages: historico // Memória
+      })
     });
+
     const data = await resposta.json();
+
+    // Remove "digitando..."
     document.getElementById("typing")?.remove();
-    adicionarMensagem(data.message || data.reply || i18n[lang].chat_nores, "bot");
+
+    const reply = data.message || data.reply || i18n[lang].chat_nores;
+
+    // Mostra resposta da IA
+    adicionarMensagem(reply, "bot");
+
+    // SALVA resposta no histórico (IMPORTANTE)
+    historico.push({
+      role: "assistant",
+      content: reply
+    });
+
+    // ====== CONTROLE DE TAMANHO ======
+    // Evita ficar muito pesado (limite simples)
+    if (historico.length > 10) {
+      historico.shift(); // remove a mais antiga
+    }
+
   } catch (error) {
     document.getElementById("typing")?.remove();
     adicionarMensagem(i18n[lang].chat_error, "bot");
     console.error(error);
   }
 }
+
+// Torna a função global (botão usa ela)
 window.enviar = enviar;
 
+// Enter envia mensagem
 document.getElementById("msg").addEventListener("keydown", (e) => {
-  if (e.key === "Enter") { e.preventDefault(); enviar(); }
-  if (e.key === "Escape") { showView('inicio'); }
+  if (e.key === "Enter") {
+    e.preventDefault();
+    enviar();
+  }
+
+  if (e.key === "Escape") {
+    showView('inicio');
+  }
 });
 
-// Pega ou cria um sessionId único pro navegador
+// ====== (OPCIONAL) Session ID ======
+// Ainda não usado, mas útil no futuro
 let sessionId = localStorage.getItem('chat_session_id');
+
 if (!sessionId) {
   sessionId = 'user_' + Date.now() + '_' + Math.random().toString(36).slice(2);
   localStorage.setItem('chat_session_id', sessionId);
 }
 
-/* Mensagem inicial do bot */
+// ====== Mensagem inicial ======
 adicionarMensagem(i18n[lang].chat_welcome, "bot");
