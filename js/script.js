@@ -172,7 +172,7 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
 applyLang();
 
 /* ====== Chatbot conectado ao n8n ====== */
-const N8N_WEBHOOK = "https://dariik.app.n8n.cloud/webhook-test/a79da60c-de8d-45de-bfe5-86a2d21e072b";
+const N8N_WEBHOOK = "https://dariik.app.n8n.cloud/webhook/a79da60c-de8d-45de-bfe5-86a2d21e072b";
 
 function adicionarMensagem(texto, tipo, id = null) {
   const chat = document.getElementById("chat");
@@ -212,6 +212,13 @@ document.getElementById("msg").addEventListener("keydown", (e) => {
   if (e.key === "Enter") { e.preventDefault(); enviar(); }
   if (e.key === "Escape") { showView('inicio'); }
 });
+
+// Pega ou cria um sessionId único pro navegador
+let sessionId = localStorage.getItem('chat_session_id');
+if (!sessionId) {
+  sessionId = 'user_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+  localStorage.setItem('chat_session_id', sessionId);
+}
 
 /* Mensagem inicial do bot */
 adicionarMensagem(i18n[lang].chat_welcome, "bot");
