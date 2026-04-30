@@ -63,7 +63,7 @@ if(!reduced){ setInterval(()=> go(idx+1), 7000); }
 /* ====== Tradução PT/EN ====== */
 const i18n = {
   'pt-BR': {
-    skip:'Pular para o conteúdo', brand:'Aprender com Acolhimento',
+    skip:'Pular para o conteúdo', brand:'FocusAI: Aprender com acolhimento',
     nav_home:'Início', nav_about:'Sobre', nav_tips:'Dicas', nav_resources:'Recursos', nav_chat:'Chatbot',
     contrast:'Contraste',
     hero_tag:'Apoio para Dislexia e TDAH no Ensino Fundamental',
