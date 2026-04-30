@@ -109,7 +109,7 @@ const i18n = {
     chat_placeholder:'Escreva sua dúvida...'
   },
   'en': {
-    skip:'Skip to content', brand:'Learning with Care',
+    skip:'Skip to content', brand:'FocusAI: Learning with Care',
     nav_home:'Home', nav_about:'About', nav_tips:'Tips', nav_resources:'Resources', nav_chat:'Chatbot',
     contrast:'Contrast',
     hero_tag:'Support for Dyslexia and ADHD in Elementary School',
