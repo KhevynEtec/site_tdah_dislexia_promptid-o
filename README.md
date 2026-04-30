@@ -38,5 +38,5 @@ Ele responde perguntas acadêmicas de forma simples e adaptada para TDAH e disle
 ## 📥 Como clonar o projeto
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/seu-usuario/seu-repositorio.git](https://github.com/KhevynEtec/site_tdah_dislexia_promptid-o
 cd seu-repositorio
