@@ -40,4 +40,4 @@ Ele responde perguntas acadêmicas de forma simples e adaptada para TDAH e disle
 ```bash
 git clone https://github.com/KhevynEtec/site_tdah_dislexia_promptidao
 
-cd 
+cd repositorio
