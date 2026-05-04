@@ -174,7 +174,7 @@ applyLang();
 // ====== Chatbot conectado ao n8n COM MEMÓRIA ======
 
 // URL do seu webhook do n8n
-const N8N_WEBHOOK = "DIGITE-SUA-CHAVE-WEBHOOK";
+const N8N_WEBHOOK = "https://dariik.app.n8n.cloud/webhook/a79da60c-de8d-45de-bfe5-86a2d21e072b";
 
 // ====== MEMÓRIA TEMPORÁRIA ======
 // Array que guarda toda a conversa (enquanto a aba estiver aberta)
